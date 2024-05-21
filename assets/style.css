@@ -10,9 +10,6 @@ body {
 }
 
 header {
-  background-image: url(./img/bg.jpg);
-  background-size: cover;
-  background-color: rgba(0, 0, 0, 0.827);
   min-height: 100vh;
   padding: 0px;
   display: flex;
@@ -21,7 +18,37 @@ header {
   flex-direction: column;
   color: rgb(20, 20, 20);
   font-size: 1.3em;
+  position: relative;
 }
+
+.bg {
+  background-image: url(./img/bg.jpg);
+  background-color: rgb(50, 50, 50);
+  background-size: cover;
+  filter: blur(3px);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+header:hover h1,
+header:hover p,
+header:hover img {
+  filter: blur(3px);
+}
+
+h1,
+p,
+img, .bg {
+  transition: filter 1s;
+}
+
+header:hover .bg {
+  filter: blur(0);
+}
+
 
 img {
   height: 250px;
